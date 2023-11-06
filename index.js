@@ -19,7 +19,9 @@ app.post("/tshirt/:id", (req, res) => {
   const { logo } = req.body;
 
   if (!logo) {
-    res.status(418).send({ message: "Necesitamos un Logo! " });
+    res
+      .status(418)
+      .send({ message: "Necesitamos un Logo y no sabemos cual! " });
   }
   res.send({
     tshirt: `Nike con tu logo ${logo} y ID ${id}`,
